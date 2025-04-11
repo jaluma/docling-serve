@@ -23,6 +23,11 @@ ENV TESSDATA_PREFIX=/usr/share/tesseract/tessdata/
 # Docling layer                                                                                   #
 ###################################################################################################
 
+# Create required cache directories with correct permissions
+RUN mkdir -p /opt/app-root/src/.cache/docling/models && \
+    chown -R 1001:0 /opt/app-root/src/.cache && \
+    chmod -R g=u /opt/app-root/src/.cache
+
 USER 1001
 
 WORKDIR /opt/app-root/src
@@ -51,9 +56,7 @@ ARG MODELS_LIST="layout tableformer picture_classifier easyocr"
 RUN echo "Downloading models..." && \
     HF_HUB_DOWNLOAD_TIMEOUT="90" \
     HF_HUB_ETAG_TIMEOUT="90" \
-    docling-tools models download -o "${DOCLING_SERVE_ARTIFACTS_PATH}" ${MODELS_LIST} && \
-    chown -R 1001:0 /opt/app-root/src/.cache && \
-    chmod -R g=u /opt/app-root/src/.cache
+    docling-tools models download -o "${DOCLING_SERVE_ARTIFACTS_PATH}" ${MODELS_LIST}
 
 COPY --chown=1001:0 ./docling_serve ./docling_serve
 RUN --mount=from=ghcr.io/astral-sh/uv:0.6.1,source=/uv,target=/bin/uv \

@@ -10,9 +10,6 @@ on:
       ghcr_image_name:
         type: string
         description: "Name of the image for GHCR."
-      quay_image_name:
-        type: string
-        description: "Name of the image Quay."
       platforms:
         type: string
         description: "Platform argument for building images."
