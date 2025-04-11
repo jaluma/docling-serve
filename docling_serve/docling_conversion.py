@@ -204,7 +204,7 @@ def convert_documents(
     converter = get_converter(pdf_format_option)
     results: Iterator[ConversionResult] = converter.convert_all(
         sources,
-        headers=headers,
+        # headers=headers,
     )
 
     return results
