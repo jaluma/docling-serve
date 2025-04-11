@@ -410,7 +410,7 @@ wheels = [
 
 [[package]]
 name = "docling"
-version = "2.23.0"
+version = "2.14.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beautifulsoup4" },
@@ -426,7 +426,6 @@ dependencies = [
     { name = "marko" },
     { name = "openpyxl" },
     { name = "pandas" },
-    { name = "pillow" },
     { name = "pydantic" },
     { name = "pydantic-settings" },
     { name = "pypdfium2" },
@@ -435,12 +434,11 @@ dependencies = [
     { name = "requests" },
     { name = "rtree" },
     { name = "scipy" },
-    { name = "tqdm" },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/94/45/807f81abeaa1a018998525a98d577508e6c0eba4173e6ec4beeee77f0644/docling-2.23.0.tar.gz", hash = "sha256:7ffde3366b01e2f1c0e47574700501a3b8667082cf3a185efe7e103b8473ee43", size = 106065 }
+sdist = { url = "https://files.pythonhosted.org/packages/b7/9d/29dcc890a416c6b5fce68198c7ac19313022b4531a72009db31efd17fb53/docling-2.14.0.tar.gz", hash = "sha256:79152f9a409c4f6de26a5ae654ef840f60a08665151c954dfe9ba76e4b773d08", size = 87836 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9f/7f/79985fbb4f115f87688b2a8d18ddc14d45fcccd8989a02104ddc8cf9b02c/docling-2.23.0-py3-none-any.whl", hash = "sha256:bd3d05bf48fc842e502af9f26153c40e2fcc1df1945ec72ab8c4d5dd1f3b6528", size = 137161 },
+    { url = "https://files.pythonhosted.org/packages/5e/a5/1d57153a5c9e3e6476bd993b0be5eaa6cbe12f7c413f5031d4b7e9caa3d6/docling-2.14.0-py3-none-any.whl", hash = "sha256:fe4642064303859ee59ece9bd4d0e1d65428d270a0c1895d6f59416984db91e6", size = 113123 },
 ]
 
 [[package]]
@@ -584,7 +582,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "docling", specifier = "~=2.23" },
+    { name = "docling", specifier = "==2.14" },
     { name = "fastapi", extras = ["standard"], specifier = "~=0.115" },
     { name = "gradio", marker = "extra == 'ui'", specifier = "~=5.9" },
     { name = "httpx", specifier = "~=0.28" },
