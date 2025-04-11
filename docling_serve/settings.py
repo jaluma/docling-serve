@@ -35,7 +35,6 @@ class DoclingServeSettings(BaseSettings):
     artifacts_path: Optional[Path] = None
     static_path: Optional[Path] = None
     options_cache_size: int = 2
-    allow_external_plugins: bool = False
 
     cors_origins: list[str] = ["*"]
     cors_methods: list[str] = ["*"]
